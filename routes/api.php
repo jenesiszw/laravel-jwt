@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+/**
+ * auth api routes
+ */
+Route::controller(AuthController::class)
+    ->prefix('auth')
+    ->group(function () {
+        Route::post('/login', 'login');
+        Route::post('/logout', 'logout')->middleware(['jwt']);
+        Route::post('/refresh', 'refresh')->middleware(['jwt']);
+    });
+
+
+/**
+ * test api route
+ */
+
+Route::controller(TestController::class)
+    ->prefix('test')
+    ->middleware(['jwt'])
+    ->group(function () {
+        Route::get('/', 'test');
+    });
