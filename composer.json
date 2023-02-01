@@ -2,13 +2,18 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
+        "php-open-source-saver/jwt-auth": "^2.0",
+        "lorisleiva/laravel-actions": "^2.4",
         "laravel/tinker": "^2.7"
     },
     "require-dev": {
@@ -18,7 +23,9 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10",
-        "spatie/laravel-ignition": "^1.0"
+        "spatie/laravel-ignition": "^1.0",
+        "wulfheart/laravel-actions-ide-helper": "^0.3.0",
+        "bilfeldt/laravel-route-statistics": "^1.2"
     },
     "autoload": {
         "psr-4": {
@@ -49,7 +56,9 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                 "barryvdh/laravel-ide-helper"
+            ]
         }
     },
     "config": {
