@@ -3,7 +3,6 @@
 namespace App\Auth;
 
 use Illuminate\Http\Request;
-use App\Util\Actions\Response;
 use Illuminate\Support\Facades\Auth;
 use Lorisleiva\Actions\Concerns\AsAction;
 use PHPOpenSourceSaver\JWTAuth\Facades\JWTAuth;
