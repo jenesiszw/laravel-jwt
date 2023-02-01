@@ -31,10 +31,15 @@ php artisan jwt:secret
 
 php artisan key:generate
 
+```
+
+## Usage
+
+```
 php artisan serve
 ```
 
-5. Routes
+1. Routes
 
 ```
 1. GET /api/test # Test route
@@ -43,7 +48,7 @@ php artisan serve
 4. POST /api/auth/refresh # Refresh token route
 ```
 
-6. Credentials
+2. Credentials
 
 ```
 username: nigel
